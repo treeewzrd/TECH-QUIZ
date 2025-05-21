@@ -1,145 +1,100 @@
-# 19 Testing: Tech Quiz Test Suite
+# Tech Quiz Application
 
-## Your Task
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/Node.js-16.x+-green)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)](https://www.mongodb.com/)
 
-Your assignment this week underscores the importance of ensuring reliability and robustness in modern web applications through comprehensive testing. In today's dynamic development environment, testing is not just an afterthought but a critical part of the development process that ensures applications meet user demands and perform efficiently under various conditions.
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Questions](#questions)
 
-This week, you'll take the starter codebase of a fully functioning Tech Quiz application and enhance it by adding Cypress for both component and end-to-end tests. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It allows users to take a quiz of ten random questions and view their final score.
+## Description
 
-To complete the assignment, you’ll need to do the following:
+Tech Quiz is a full-stack web application that allows users to test their technical knowledge through a series of multiple-choice questions. Built with the MERN stack (MongoDB, Express.js, React, and Node.js), this application provides an interactive quiz experience with real-time scoring.
 
-1. Install Cypress as a dev dependency
+## Features
 
-2. Configure Cypress for both component and end-to-end testing
+- Interactive quiz interface
+- Randomized questions
+- Real-time scoring
+- Responsive design
+- Component and end-to-end testing with Cypress
 
-3. Create a component test for the quiz component
+## Technologies Used
 
-4. Create an end-to-test for the quiz component
+- **Frontend**: React, TypeScript, Vite
+- **Backend**: Node.js, Express.js, TypeScript
+- **Database**: MongoDB Atlas
+- **Testing**: Cypress
+- **Styling**: Bootstrap 5
 
-## User Story
+## Installation
 
-```md
-AS AN aspiring developer
-I WANT to take a tech quiz
-SO THAT I can test my knowledge and improve my skills
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/treeewzrd/TECH-QUIZ.git
+   cd TECH-QUIZ
+   ```
 
-## Acceptance Criteria
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```md
-GIVEN I am taking a tech quiz
-WHEN I click the start button
-THEN the quiz starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN all questions are answered
-THEN the quiz is over
-WHEN the quiz is over
-THEN I can view my score
-WHEN the quiz is over
-THEN I can start a new quiz
-```
+3. Set up environment variables:
+   - Create a `.env` file in the `server` directory
+   - Add your MongoDB connection string:
+     ```
+     MONGODB_URI=your_mongodb_connection_string
+     PORT=3001
+     ```
 
-## Mock-Up
+## Usage
 
-The following animation demonstrates the application functionality:
+1. Start the development server:
+   ```bash
+   npm run start:dev
+   ```
 
-![A GIF demonstrates a functioning quiz.](./Assets/19-testing-homework-demo.gif)
+2. Open your browser and navigate to:
+   ```
+   http://localhost:3001
+   ```
 
-## Getting Started
+3. Click "Start Quiz" to begin the quiz
 
-This Challenge combines many of the skills we've covered so far. In addition to the user story and acceptance criteria, we’ve provided some guidelines to help you get started.
+## Testing
 
-Because this Challenge requires a video submission, refer to the [Full-Stack Blog video submission guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for guidance on creating and sharing a video.
-
-**Important**: You won't need to modify code for the existing application. In this challenge, you'll only be creating tests for the existing application.
-
-Your testing should use [Cypress](https://docs.cypress.io/guides/overview/why-cypress) to run both the component tests and the end-to-end tests. The testing will be invoked using the following command:
-
+Run the test suite with:
 ```bash
-npm run test
+npm test
 ```
 
-It's recommended that you start with a directory structure that looks like the following example:
+This will execute both component and end-to-end tests using Cypress.
 
-```md
-.
-├── client/                 // the client application
-├── cypress/                // Folder for Cypress
-    ├── component/          // Folder for component tests
-        └── Quiz.cy.jsx     // Component tests for the Quiz component
-    ├── e2e/                // Folder for end-to-end tests
-        └── quiz.cy.js      // End-to-end tests for the Tech Quiz
-    ├── fixtures/           // Folder for test fixtures
-        └── questions.json  // Mock data for testing
-    └── tsconfig.json
-├── server/                 // the server application
-├── .gitignore
-├── cypress.config.ts       // Runs the application using imports from lib/
-├── package.json
-├── tsconfig.json
-└── README.md              // App description, link to video, setup and usage instructions           
-```
+## Contributing
 
-**Note**: The server for this application requires environment variables to function properly. You'll need to rename the `.env.example` file to `.env`.
+Contributions are welcome! Please feel free to submit a pull request.
 
-## Grading Requirements
+## License
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it's considered incomplete and won't count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+This project is licensed under the MIT License.
 
-This Challenge is graded based on the following criteria:
+## Questions
 
-### Deliverables: 15%
-
-* Your GitHub repository must contain the application code as well as the configuration and tests using Cypress.
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the component and end-to-end tests running and passing must be submitted.
-
-* The `README.md` file must include a link to the walkthrough video.
-
-* The walkthrough video must show all tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-### Technical Acceptance Criteria: 40%
-
-* Your submission should satisfy all of the preceding acceptance criteria in addition to the following:
-
-  * You must use the [Cypress package](https://www.npmjs.com/package/cypress).
-
-  * The application must have a component test for the quiz component.
-
-  * The application must have an end-to-end test for the quiz component.
-
-### Repository Quality: 13%
-
-* Your repository has a unique name.
-
-* Your repository follows the best practices for file structure and naming conventions.
-
-* Your repository follows the best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Your repository contains multiple descriptive commit messages.
-
-* Your repository contains a high-quality README with a description and a link to your walkthrough video.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and the application successfully passing tests.
-
-* The URL of your GitHub repository, which should have a unique name and include a README describing the project.
+For any questions, please contact:
+- **Name**: Timothy McGrath
+- **Email**: treewzrd@gmail.com
+- **GitHub**: [treeewzrd](https://github.com/treeewzrd)
 
 ---
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+ 2025 Timothy McGrath. All rights reserved.
